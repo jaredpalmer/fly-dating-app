@@ -11,6 +11,9 @@ dependencies = ["numpy==2.4.6", "pandas==3.0.5", "pyarrow==25.0.1", "Pillow==12.
 
 [project.optional-dependencies]
 test = ["pytest>=8,<10"]
+browser = [
+    "playwright==1.58.0",
+]
 
 [project.scripts]
 flywirehead = "flywirehead.cli:main"

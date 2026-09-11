@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f5f2eb" />
+  <meta name="description" content="A fly. A dating app. 166,700 neurons looking for a connection. A local, fictional dating experiment with measured neural activity." />
+  <title>WING — Born to fly. Forced to date.</title>
+  <link rel="icon" href="./wing-mark.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./wing.css" />
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 2.8 7.2L22 12l-7.2 2.8L12 22l-2.8-7.2L2 12l7.2-2.8Z"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-9 9 10 10 0 0 1-4-.9L3 21l1.4-5A9 9 0 1 1 21 11.5Z"/><path d="M8 10h8M8 14h5"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 22v-3a8 8 0 0 1 16 0v3"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 4 12 8-12 8Z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h7m5 0h4M4 17h3m5 0h8"/><circle cx="13" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></symbol>
+    <symbol id="i-rose" viewBox="0 0 24 24"><path d="M12 22V12m0 6c-4 0-6-2-6-4 4 0 6 2 6 4Zm0-6C4 12 3 6 7 4c1-4 8-4 9 0 5 2 3 8-4 8Z"/><path d="M8 5c5-2 9 3 4 5-5-2-3-6 1-5"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-wing" viewBox="0 0 32 32"><path d="M16 27C3 21 2 7 7 5c5-2 9 7 9 13C16 12 20 3 25 5c5 2 4 16-9 22Z"/><path d="M16 18v12"/></symbol>
+  </defs></svg>
+  <header class="masthead">
+    <a class="brand" href="/" aria-label="WING home"><svg><use href="#i-wing"/></svg>wing<span class="brand-tag">a connection experiment</span></a>
+    <div class="header-right"><span class="live-label"><i id="connection-dot"></i><span id="connection-label">CONNECTING TO BRAIN</span></span><button class="icon-button" id="settings-button" aria-label="Experiment settings"><svg><use href="#i-sliders"/></svg></button></div>
+  </header>
+  <main>
+    <section class="intro">
+      <div><div class="eyebrow">FIELD NOTES / EXPERIMENT 002</div><h1>Born to fly. <em>Forced to date.</em></h1><p>166,700 neurons. 36 eligible flies. Let's see if anything sparks.</p></div>
+      <div class="session-controls"><button class="button secondary" id="step-button"><svg><use href="#i-arrow"/></svg>One profile</button><button class="button primary" id="pause-button"><svg><use href="#i-pause"/></svg><span>Pause fly</span></button></div>
+    </section>
+    <section class="workspace">
+      <section class="chamber panel" aria-label="Fly observation chamber">
+        <div class="panel-heading"><span class="eyebrow">THE SUBJECT</span><span class="tiny-pill">F–001 / LIVE</span></div>
+        <div class="chamber-scene"><canvas id="scene" tabindex="0" aria-label="Francis operating his phone. Drag to orbit. C changes the camera."></canvas><div class="scene-wash"></div><div class="chamber-caption"><span class="eyebrow">ONE VERY SMALL SOCIAL LIFE</span><p id="chamber-action">Getting ready to put himself out there.</p></div><div class="camera-buttons"><button id="camera-button" class="glass-button" aria-label="Change camera"><svg><use href="#i-eye"/></svg>Change view</button><button id="cinema-button" class="glass-button">Cinema</button></div><div id="scene-error" class="scene-error" role="alert" hidden></div></div>
+        <div class="subject-card"><div class="subject-avatar"><svg><use href="#i-wing"/></svg></div><div><h2>Francis <span>12 days</span></h2><p>Looking for a connection. Has 25.6 million.</p></div><span class="subject-status" id="subject-status">Warming up</span></div>
+        <div class="session-stats"><div><strong id="stat-viewed">0</strong><span>profiles seen</span></div><div><strong id="stat-likes">0</strong><span>likes sent</span></div><div><strong id="stat-matches">0</strong><span>simulated matches</span></div></div>
+        <div class="chamber-note"><svg><use href="#i-spark"/></svg><span>Real connectome. Approximate physiology. Extremely fictional love life.</span></div>
+      </section>
+      <section class="app-panel" aria-label="WING dating app">
+        <div class="app-topline"><span class="eyebrow">HIS PHONE, UP CLOSE</span><span id="deck-counter">01 / 36</span></div>
+        <div class="phone-frame"><canvas id="wing-screen" width="720" height="1280" aria-label="Current fly profile, also displayed on Francis’s phone"></canvas><div id="profile-accessible" class="sr-only"></div><div id="action-stamp" class="action-stamp" aria-live="polite" hidden></div></div>
+        <div class="operator-actions"><span>GIVE HIM A NUDGE <small>operator override</small></span><div><button class="round-button" data-choice="manual_pass" title="Manually pass; recorded as an operator override" aria-label="Manual pass"><svg><use href="#i-close"/></svg></button><button class="round-button rose" data-choice="rose" title="Send a fictional rose; recorded as an operator override" aria-label="Send a rose"><svg><use href="#i-rose"/></svg></button><button class="round-button like" data-choice="manual_like" title="Manually like; recorded as an operator override" aria-label="Manual like"><svg><use href="#i-heart"/></svg></button></div></div>
+        <nav class="app-nav" aria-label="WING navigation"><button data-tab="discover" class="active"><svg><use href="#i-wing"/></svg>Discover</button><button data-tab="standouts"><svg><use href="#i-spark"/></svg>Standouts</button><button data-tab="incoming"><svg><use href="#i-heart"/></svg>Likes you<span id="incoming-badge" class="badge" hidden></span></button><button data-tab="messages"><svg><use href="#i-chat"/></svg>Messages<span id="matches-badge" class="badge" hidden></span></button><button data-tab="account"><svg><use href="#i-user"/></svg>You</button></nav>
+      </section>
+      <aside class="inspector panel" aria-label="Measured neural activity and decision policy">
+        <div class="panel-heading"><span class="eyebrow">UNDER THE EXOSKELETON</span><span class="measured-tag">MEASURED</span></div>
+        <div class="dopamine-reading"><span>Dopamine-neuron activity</span><div><strong id="dopamine-value">—</strong><span>Hz</span></div><small>Mean firing rate · 15 PAM11 neurons</small></div>
+        <div class="chart-wrap"><canvas id="dopamine-chart" width="540" height="220" role="img" aria-label="Measured PAM11 firing rate over neural time"></canvas><div class="chart-labels"><span id="chart-range">WAITING FOR SAMPLES</span><span>NEURAL TIME</span></div></div>
+        <div class="decision-heading"><span class="eyebrow">THE DECISION LOOP</span><span id="phase-label">Preparing</span></div>
+        <div class="stage-steps"><i data-stage="baseline"></i><i data-stage="photo-0"></i><i data-stage="photo-1"></i><i data-stage="photo-2"></i><i data-stage="decision"></i></div>
+        <p class="decision-description" id="decision-description">Loading the local neural model. No measurements are invented while we wait.</p>
+        <dl class="signal-grid"><div><dt>Baseline</dt><dd id="baseline-value">—</dd></div><div><dt>Response delta</dt><dd id="delta-value">—</dd></div><div><dt>Like threshold</dt><dd id="threshold-value">—</dd></div><div><dt>Neural exposure</dt><dd id="exposure-value">—</dd></div></dl>
+        <div class="signal-notice" id="signal-notice">A neural response is not evidence of biological attraction.</div>
+        <div class="inspector-divider"></div><div class="history-heading"><span class="eyebrow">RECENT CONNECTIONS</span><button class="text-button" id="history-button">View all <span>↗</span></button></div><div class="decision-history" id="decision-history"><div class="empty-history">A clean slate.<br>His first decision will appear here.</div></div>
+        <button class="button secondary wide" id="save-button">Save experiment</button>
+        <div class="inspector-foot"><span id="spike-value">— spikes</span><span id="checkpoint-label">Not yet saved</span></div>
+      </aside>
+    </section>
+    <footer><p><span class="footer-mark">wing</span> Fictional profiles. Real neural measurements. No actual dating accounts.</p><div><button class="text-button" id="method-button">How it works</button><a href="/api/wing/export" download>Export session</a><span>MaleCNS v1.0</span></div></footer>
+  </main>
+  <dialog id="world-dialog" class="world-dialog" aria-labelledby="dialog-title"><div class="dialog-heading"><div><span class="eyebrow" id="dialog-kicker">THE WING WORLD</span><h2 id="dialog-title">Connections</h2></div><button class="icon-button" id="close-dialog" aria-label="Close dialog"><svg><use href="#i-close"/></svg></button></div><p class="dialog-note" id="dialog-note">Spectator console. Neural observation pauses while you browse.</p><div id="dialog-content"></div></dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <script type="module" src="./wing.js"></script>
+</body>
+</html>
